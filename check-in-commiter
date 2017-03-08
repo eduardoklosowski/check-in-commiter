@@ -1,0 +1,31 @@
+#!/bin/bash
+
+set -e
+
+
+[ -d 'CHECK-IN' ] || git clone --depth 1 'https://github.com/univille-prof-ivan-bosnic/CHECK-IN.git'
+cd CHECK-IN
+
+echo -e '\n====> Atualizando repositório...'
+git pull origin master
+
+
+if ! git config user.email | grep -q '@univille\.br$'; then
+  echo -e '\n====> Configurando e-mail...'
+  read -r -p 'Usuário da UNIVILLE: ' email
+  git config user.email "$email@univille.br"
+fi
+
+
+echo -e '\n====> Commitando presença'
+> "2017-ENG-ESTD/$(git config user.email)/$(date +'%d-%m-%Y').txt"
+git add .
+git commit -m 'presente' || :
+
+echo -e '\n====> Enviando presença'
+while ! git push origin master; do
+  git pull origin master
+done
+
+
+echo -e '\n====> Presença commitada!'
