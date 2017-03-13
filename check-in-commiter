@@ -22,7 +22,7 @@ fi
 echo -e '\n====> Commitando presença'
 > "2017-ENG-ESTD/$(git config user.email)/$(date +'%d-%m-%Y').txt"
 git add .
-git commit -m 'presente' || :
+git commit -m 'presenca' || :
 
 echo -e '\n====> Enviando presença'
 while ! git push origin master; do
