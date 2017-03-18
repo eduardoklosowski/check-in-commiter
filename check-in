@@ -11,11 +11,8 @@ git pull origin master
 
 
 if ! git config user.email | grep -q '@univille\.br$'; then
-  echo -e '\n====> Configurando e-mail...'
-  read -r -p 'Nome: ' nome
-  git config user.name "$nome"
-  read -r -p 'Usuário da UNIVILLE: ' email
-  git config user.email "$email@univille.br"
+  echo 'Usuário não configurado!'
+  exit 1
 fi
 
 

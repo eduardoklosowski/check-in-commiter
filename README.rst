@@ -8,17 +8,21 @@ Commita presença no repositório de chamada.
 Uso
 ===
 
-curl
-----
+Configuração inicial
+--------------------
+
+Execute o script de configuração, informando seu nome e usuário da UNIVILLE:
 
 .. code-block:: sh
 
-  curl -sSL https://github.com/eduardo-univille/check-in-commiter/raw/master/check-in-commiter | bash
+  curl -sSL https://github.com/eduardoklosowski/check-in-commiter/raw/master/setup | bash
 
 
-GNU Wget
---------
+Commitando presença
+-------------------
+
+Para commitar a presença, execute:
 
 .. code-block:: sh
 
-  wget -O - https://github.com/eduardo-univille/check-in-commiter/raw/master/check-in-commiter | bash
+  git presenca

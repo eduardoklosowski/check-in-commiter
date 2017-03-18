@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+echo -e '\n====> Configurando usuário...'
+
+read -r -p 'Nome: ' nome
+read -r -p 'Usuário da UNIVILLE: ' email
+
+git config --global user.name "$nome"
+git config --global user.email "$email@univille.br"
+git config --global alias.presenca '!curl -sSL https://github.com/eduardoklosowski/check-in-commiter/raw/master/check-in | bash'
