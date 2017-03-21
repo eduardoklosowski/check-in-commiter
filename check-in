@@ -17,6 +17,7 @@ fi
 
 
 echo -e '\n====> Commitando presença'
+mkdir -p "2017-ENG-ESTD/$(git config user.email)"
 > "2017-ENG-ESTD/$(git config user.email)/$(date +'%d-%m-%Y').txt"
 git add .
 git commit -m 'presenca' || :
