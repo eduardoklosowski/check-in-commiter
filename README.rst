@@ -11,11 +11,14 @@ Uso
 Configuração inicial
 --------------------
 
-Execute o script de configuração, informando seu nome e usuário da UNIVILLE:
+Faça a configuração do git conforme os comandos a baixo, informando seu nome, e-mail da UNIVILLE e criando o comando do git:
 
 .. code-block:: sh
 
-  curl -sSL https://github.com/eduardoklosowski/check-in-commiter/raw/master/setup | bash
+  git config --global user.name 'Nome Completo'
+  git config --global user.email 'usuario@univille.br'
+
+  git config --global alias.presenca '!curl -sSL https://github.com/eduardoklosowski/check-in-commiter/raw/master/check-in | bash'
 
 
 Commitando presença
