@@ -3,7 +3,7 @@
 set -e
 
 
-[ -d 'CHECK-IN' ] || git clone --depth 1 'https://github.com/univille-prof-ivan-bosnic/CHECK-IN.git'
+[ -d 'CHECK-IN' ] || git clone --depth 1 'https://github.com/univille-prof-ivan-bosnic/CHECKIN-ENG-ESTD-2017.git' CHECK-IN
 cd CHECK-IN
 
 echo -e '\n====> Atualizando repositório...'
@@ -17,8 +17,8 @@ fi
 
 
 echo -e '\n====> Commitando presença'
-mkdir -p "2017-ENG-ESTD/$(git config user.email)"
-> "2017-ENG-ESTD/$(git config user.email)/$(date +'%d-%m-%Y').txt"
+mkdir -p "$(git config user.email)"
+> "$(git config user.email)/$(date +'%d-%m-%Y').txt"
 git add .
 git commit -m 'presenca' || :
 
